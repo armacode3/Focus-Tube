@@ -30,11 +30,11 @@ export default function SearchBar() {
           event.preventDefault()
           if (searchType === "video") {
             if (userText.length !== 0) {
-              router.push(`/search/${userText}`)
+              router.push(`/search/${userText}?type=video`)
             }
           } else if (searchType === "playlist") {
             if (userText.length !== 0) {
-              router.push(`/playlist-search/${userText}`)
+              router.push(`search/${userText}?type=playlist`)
             }
           } else if (searchType === "videoId") {
             if (userText.length !== 0) {
@@ -42,7 +42,7 @@ export default function SearchBar() {
             }
           } else if (searchType === "playlistId") {
             if (userText.length !== 0) {
-              router.push(`/playlists/${userText}`)
+              router.push(`/playlist/${userText}`)
             }
           }
         }}>

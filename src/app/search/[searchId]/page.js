@@ -1,7 +1,7 @@
-import SearchBar from '../../../components/SearchBar'
+import SearchBar from '../../../components/SearchBar.js'
 
 export default async function Search({ params }) {
-    const { searchId } = params
+    const { searchId } = await params
 
     const res = await fetch(
         `http://localhost:3000/api/search?text=${encodeURIComponent(searchId)}&type=video`,
@@ -17,7 +17,7 @@ export default async function Search({ params }) {
         </div>
         <div>
         {videos.items?.map((vid) => {
-            return (<a key={vid} className="flex flex-row gap-4" href={`/video/${vid.id.videoId}`}>
+            return (<a key={vid.id.videoId} className="flex flex-row gap-4" href={`/video/${vid.id.videoId}`}>
                 <img 
                 src={vid.snippet.thumbnails.medium.url}
                 alt={vid.snippet.title}
