@@ -24,19 +24,19 @@ export default async function Playlist({ params }) {
             </div>
             <div>
                 <h2>{playlistData.items[0].snippet.title}</h2>
-                <p>{playlistData.items[0].snippet.description}</p>
+                <p>{playlistData.items[0].snippet.channelTitle}</p>
                 <div>
                     {playlistVideos.items?.map((vid) => {
                         return (<a key={vid.snippet.resourceId.videoId} className="flex flex-row gap-4" href={`/video/${vid.snippet.resourceId.videoId}`}>
                             <img
-                            src={vid.snippet.thumbnails.medium.url}
+                            src={vid.snippet.thumbnails?.medium?.url || '../image-load-failed.png'}
                             alt={vid.snippet.title}
                             height={160}
                             width={120}
                             />
                             <div>
                                 <h2>{vid.snippet.title}</h2>
-                                <p>{vid.snippet.description}</p>
+                                <p>{vid.snippet.channelTitle}</p>
                             </div>
                         </a>)
                     })}

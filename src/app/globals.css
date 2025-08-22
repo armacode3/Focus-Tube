@@ -14,13 +14,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #272757;
-    --foreground: #ededed;
+    --background: #0D1117;     
+    --ui-primary: #161B22;
+    --border-color: #30363D;
+
+    --foreground: #E6EDF3;
+    --foreground-secondary: #8B949E;
+
+
+    --accent-color: #1F6FEB;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans); 
 }

@@ -4,8 +4,9 @@ export async function GET(request) {
 
     const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
     url.searchParams.set("part", "snippet");
-    url.searchParams.set("playlistId", playlistId)
-    url.searchParams.set("key", process.env.API_KEY)
+    url.searchParams.set("maxResults", 50)
+    url.searchParams.set("playlistId", playlistId);
+    url.searchParams.set("key", process.env.API_KEY);
 
     try {
         const response = await fetch(url.toString());

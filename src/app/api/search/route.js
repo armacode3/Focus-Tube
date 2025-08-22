@@ -7,6 +7,7 @@ export async function GET(request) {
     // Build URL to call to the API
     const url = new URL("https://www.googleapis.com/youtube/v3/search");
     url.searchParams.set("part", "snippet");
+    url.searchParams.set("maxResults", 45)
     url.searchParams.set("q", searchText);
     url.searchParams.set("type", searchType);
     url.searchParams.set("key", process.env.API_KEY);
